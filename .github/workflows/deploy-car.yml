@@ -1,0 +1,41 @@
+name: Deploy Car Webpage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Car-Webpage/**'  # Trigger ONLY when files in this directory change
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name netsmartzregistry
+
+      - name: Build and Push Docker Image
+        run: |
+          # Move into the specific project directory
+          cd Car-Webpage
+          
+          # Build using the Dockerfile we discussed (Nginx-based)
+          docker build -t netsmartzregistry.azurecr.io/car-webpage:${{ github.sha }} .
+          
+          # Push to your Netsmartz ACR
+          docker push netsmartzregistry.azurecr.io/car-webpage:${{ github.sha }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'netsmartz-car-site'
+          images: 'netsmartzregistry.azurecr.io/car-webpage:${{ github.sha }}'
