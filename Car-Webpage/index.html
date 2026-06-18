@@ -10,15 +10,32 @@
 
 <body>
 
-    <nav>
-        <a href="#" class="logo">DIORBILLION <span>AUTOMOTIVE</span></a>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#fleet">Fleet</a></li>
-            <li><a href="#finance">Concierge</a></li>
-            <li><a href="#contact">Inquiry</a></li>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">DIORBILLION</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="#" class="logo" aria-label="DIORBILLION Automotive Homepage">DIORBILLION <span>AUTOMOTIVE</span></a>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+            <li role="none"><a href="#fleet" role="menuitem">Fleet</a></li>
+            <li role="none"><a href="#finance" role="menuitem">Concierge</a></li>
+            <li role="none"><a href="#contact" role="menuitem">Inquiry</a></li>
         </ul>
-        <a href="#finance" class="nav-cta">Secure Yours</a>
+        <div class="nav-right">
+            <a href="#finance" class="nav-cta" aria-label="Proceed to acquisition concierge">Secure Yours</a>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
     <header class="hero" id="hero">
@@ -50,8 +67,58 @@
                 <h2>The Global Fleet</h2>
             </div>
 
+            <div class="filter-buttons reveal" role="group" aria-label="Vehicle filters">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All Vehicles</button>
+                <button class="filter-btn" data-filter="electric" aria-pressed="false">Electric</button>
+                <button class="filter-btn" data-filter="gas" aria-pressed="false">Gasoline</button>
+            </div>
+
             <div class="fleet-grid" id="car-grid">
                 <!-- Dynamically Rendered -->
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title reveal">
+                <p>Client Experiences</p>
+                <h2>Distinguished Patrons</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"The acquisition process was seamless. The Phantom Seraph exceeds every expectation—pure automotive excellence."</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Alexander Sterling</span>
+                            <span class="author-title">CEO, Sterling Capital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"DIORBILLION doesn't just sell cars; they curate experiences. My Nebula X-GT is a masterpiece of engineering."</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Victoria Chen</span>
+                            <span class="author-title">Tech Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"The concierge service is unparalleled. They understood my vision and delivered beyond my wildest dreams."</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Marcus Webb</span>
+                            <span class="author-title">Real Estate Mogul</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,6 +170,77 @@
         </div>
     </section>
 
+    <section id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <p>Private Consultation</p>
+                <h2>Exclusive Inquiry</h2>
+            </div>
+
+            <div class="contact-wrap reveal">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Flagship Atelier</h4>
+                            <p>1 Billionaire's Row, Manhattan<br>New York, NY 10022</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h4>Private Line</h4>
+                            <p>+1 (888) DIOR-BN</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <h4>Concierge</h4>
+                            <p>exclusive@diorbillion.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form" aria-label="Contact form">
+                    <div class="form-row">
+                        <div class="input-block">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required aria-required="true">
+                        </div>
+                        <div class="input-block">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required aria-required="true">
+                        </div>
+                    </div>
+                    <div class="input-block">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="input-block">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="input-block">
+                        <label for="interest">Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select Interest</option>
+                            <option value="purchase">Vehicle Purchase</option>
+                            <option value="consultation">Private Consultation</option>
+                            <option value="test-drive">Exclusive Test Drive</option>
+                            <option value="custom">Bespoke Commission</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="nav-cta">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-wrap">
@@ -112,7 +250,62 @@
         </div>
     </footer>
 
+    <!-- Car Detail Modal -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-car-img" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <span id="modal-car-type" class="car-type"></span>
+                    <h2 id="modal-car-name"></h2>
+                    <div id="modal-car-price" class="car-price"></div>
+                    <div class="modal-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Acceleration</span>
+                            <span id="modal-spec-0-60" class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed</span>
+                            <span id="modal-spec-top-speed" class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span id="modal-spec-range" class="spec-value"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Horsepower</span>
+                            <span id="modal-spec-hp" class="spec-value"></span>
+                        </div>
+                    </div>
+                    <div class="modal-description">
+                        <p id="modal-car-description"></p>
+                    </div>
+                    <div class="modal-gallery">
+                        <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="nav-cta secondary" id="modal-config-btn">Configure</button>
+                        <button class="nav-cta" id="modal-finance-btn">Proceed to Acquisition</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/state.js"></script>
     <script src="script.js"></script>
+    <script src="js/components/comparison.js"></script>
+    <script src="js/components/wishlist.js"></script>
+    <script src="js/components/search.js"></script>
+    <script src="js/components/configurator.js"></script>
+    <script src="js/components/gallery.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
