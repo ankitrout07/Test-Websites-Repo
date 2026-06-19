@@ -6,7 +6,21 @@ const products = [
     { id: 3, name: 'Nebula Smartwatch', price: 399.99, image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500' },
     { id: 4, name: 'Zenith Mechanical Keyboard', price: 149.99, image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=500' },
     { id: 5, name: 'Orbit Drone 4K', price: 899.99, image: 'https://images.unsplash.com/photo-1507580461415-9705dc8ceeb8?auto=format&fit=crop&w=500' },
-    { id: 6, name: 'Lumina Wireless Mouse', price: 79.99, image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500' }
+    { id: 6, name: 'Lumina Wireless Mouse', price: 79.99, image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500' },
+    { id: 7, name: 'Pixel Pro Monitor', price: 549.99, image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=500' },
+    { id: 8, name: 'Sonic Bluetooth Speaker', price: 129.99, image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=500' },
+    { id: 9, name: 'Velocity Gaming Console', price: 499.99, image: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=500' },
+    { id: 10, name: 'Crystal Webcam HD', price: 89.99, image: 'https://images.unsplash.com/photo-1587826080692-f439cd0b70da?auto=format&fit=crop&w=500' },
+    { id: 11, name: 'Thunderbolt Hub', price: 199.99, image: 'https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?auto=format&fit=crop&w=500' },
+    { id: 12, name: 'Fusion Smart Home Hub', price: 149.99, image: 'https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500' },
+    { id: 13, name: 'Apex Gaming Chair', price: 349.99, image: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=500' },
+    { id: 14, name: 'Nova Tablet Pro', price: 649.99, image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=500' },
+    { id: 15, name: 'Echo Smart Speaker', price: 99.99, image: 'https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=500' },
+    { id: 16, name: 'Stream Deck Mini', price: 79.99, image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=500' },
+    { id: 17, name: 'Hyper SSD 1TB', price: 159.99, image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500' },
+    { id: 18, name: 'Wireless Charging Pad', price: 49.99, image: 'https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?auto=format&fit=crop&w=500' },
+    { id: 19, name: 'USB-C Hub Pro', price: 89.99, image: 'https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?auto=format&fit=crop&w=500' },
+    { id: 20, name: 'Smart Ring Tracker', price: 199.99, image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500' }
 ];
 
 const cart = [];
@@ -123,6 +137,21 @@ function setupNavToggle() {
     });
 }
 
+function setupContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.querySelector('input[type="text"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+        const message = form.querySelector('textarea').value;
+        
+        // Simulate form submission
+        showToast(`Thank you ${name}! We'll contact you at ${email} soon.`);
+        form.reset();
+    });
+}
+
 // cart page functions
 function renderCartPage() {
     const tbody = document.getElementById('cart-body');
@@ -210,6 +239,7 @@ if (!document.getElementById('dynamic-styles')) {
 document.addEventListener('DOMContentLoaded', () => {
     loadCart();
     setupNavToggle();
+    setupContactForm();
 
     if (document.body.classList.contains('cart-page')) {
         renderCartPage();

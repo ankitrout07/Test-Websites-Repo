@@ -13,9 +13,10 @@
         <nav>
             <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#shop">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="cart.html" id="cart-link">Cart (0)</a></li>
             </ul>
         </nav>
@@ -34,8 +35,75 @@
         <!-- products rendered by script.js -->
     </section>
 
+    <section class="features" id="features">
+        <h2>Why Choose AURA TECH?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🚀 Premium Quality</h3>
+                <p>Curated selection of the finest technology products from top brands worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Best Prices</h3>
+                <p>Competitive pricing on all products with regular deals and discounts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Secure Shopping</h3>
+                <p>Advanced encryption and secure payment processing for your peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📦 Fast Shipping</h4>
+                <p>Quick delivery with real-time tracking and insurance options.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎧 24/7 Support</h3>
+                <p>Round-the-clock customer service to assist with any questions or concerns.</p>
+            </div>
+            <div class="feature-card">
+                <h3>↩️ Easy Returns</h3>
+                <p>Hassle-free return policy with 30-day money-back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About AURA TECH</h2>
+        <div class="about-content">
+            <p>Founded in 2026, AURA TECH is your premier destination for cutting-edge technology products. We believe that everyone deserves access to high-quality tech gear that enhances their daily lives, boosts productivity, and fuels their passions.</p>
+            <p>Our team of tech enthusiasts carefully selects each product in our inventory, ensuring that you only get the best. From professional-grade equipment to consumer electronics, we've got you covered.</p>
+            <p>We're committed to providing an exceptional shopping experience with competitive prices, fast shipping, and outstanding customer support. Join thousands of satisfied customers who trust AURA TECH for all their technology needs.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>📍 123 Tech Street, Silicon Valley, CA 94025</p>
+                <p>📧 support@auratech.com</p>
+                <p>📞 (555) 123-4567</p>
+                <p>🕐 Mon-Fri: 9AM - 6PM PST</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 My E-Commerce Store. All rights reserved.</p>
+        <p>&copy; 2026 AURA TECH. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
