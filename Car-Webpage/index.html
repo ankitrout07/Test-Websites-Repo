@@ -67,10 +67,21 @@
                 <h2>The Global Fleet</h2>
             </div>
 
-            <div class="filter-buttons reveal" role="group" aria-label="Vehicle filters">
-                <button class="filter-btn active" data-filter="all" aria-pressed="true">All Vehicles</button>
-                <button class="filter-btn" data-filter="electric" aria-pressed="false">Electric</button>
-                <button class="filter-btn" data-filter="gas" aria-pressed="false">Gasoline</button>
+            <div class="filter-controls reveal" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
+                <div class="filter-buttons" role="group" aria-label="Vehicle filters" style="margin-bottom: 0;">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All Vehicles</button>
+                    <button class="filter-btn" data-filter="electric" aria-pressed="false">Electric</button>
+                    <button class="filter-btn" data-filter="gas" aria-pressed="false">Gasoline</button>
+                </div>
+                <div class="sort-wrapper">
+                    <select id="sort-select" class="sort-select" aria-label="Sort vehicles" style="padding: 10px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; font-family: inherit; font-size: 0.9rem; cursor: pointer; border-radius: 4px; outline: none;">
+                        <option value="default" style="background: #111;">Sort: Default</option>
+                        <option value="price-asc" style="background: #111;">Price: Low to High</option>
+                        <option value="price-desc" style="background: #111;">Price: High to Low</option>
+                        <option value="name-asc" style="background: #111;">Name: A to Z</option>
+                        <option value="name-desc" style="background: #111;">Name: Z to A</option>
+                    </select>
+                </div>
             </div>
 
             <div class="fleet-grid" id="car-grid">

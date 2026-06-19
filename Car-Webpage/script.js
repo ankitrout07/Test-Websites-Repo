@@ -7,7 +7,21 @@ function renderFleet(filter = 'all') {
     const grid = document.getElementById('car-grid');
     if (!grid) return;
 
-    const filteredCars = filter === 'all' ? carData : carData.filter(car => car.fuel === filter);
+    let filteredCars = filter === 'all' ? [...carData] : carData.filter(car => car.fuel === filter);
+
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        const sortValue = sortSelect.value;
+        if (sortValue === 'price-asc') {
+            filteredCars.sort((a, b) => a.price - b.price);
+        } else if (sortValue === 'price-desc') {
+            filteredCars.sort((a, b) => b.price - a.price);
+        } else if (sortValue === 'name-asc') {
+            filteredCars.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (sortValue === 'name-desc') {
+            filteredCars.sort((a, b) => b.name.localeCompare(a.name));
+        }
+    }
 
     grid.innerHTML = filteredCars.map((car, index) => `
         <div class="car-card reveal" data-fuel="${car.fuel}" data-car-id="${car.id}" style="transition-delay: ${index * 0.1}s">
@@ -55,6 +69,8 @@ function renderFleet(filter = 'all') {
 
 function initFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const sortSelect = document.getElementById('sort-select');
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => {
@@ -66,6 +82,13 @@ function initFilters() {
             renderFleet(btn.dataset.filter);
         });
     });
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            const activeFilter = document.querySelector('.filter-btn.active');
+            renderFleet(activeFilter ? activeFilter.dataset.filter : 'all');
+        });
+    }
 }
 
 // --- 2. Modal Functions ---

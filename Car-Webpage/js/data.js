@@ -97,9 +97,9 @@ const DataManager = {
             name: "Summit Zenith",
             fuel: "electric",
             price: 195000,
-            img: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf0a3?auto=format&fit=crop&w=800",
+            img: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800",
             gallery: [
-                "https://images.unsplash.com/photo-1525609004556-c46c7d6cf0a3?auto=format&fit=crop&w=800",
+                "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800",
                 "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800",
                 "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=800"
             ],
@@ -266,6 +266,94 @@ const DataManager = {
             category: "luxury",
             year: 2026,
             stock: 6,
+            featured: false
+        },
+        {
+            id: 7,
+            name: "Onyx Eclipse",
+            fuel: "electric",
+            price: 520000,
+            img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800",
+            gallery: [
+                "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800",
+                "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800",
+                "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800"
+            ],
+            specs: {
+                "0-60": "1.8s",
+                topSpeed: "260 mph",
+                range: "450 miles",
+                horsepower: "1,600 HP",
+                torque: "1,400 lb-ft",
+                weight: "3,900 lbs",
+                length: "194 inches",
+                width: "80 inches"
+            },
+            features: [
+                "Solid State Battery",
+                "Graphene Body",
+                "AI-Driven Dynamics",
+                "Holographic Display",
+                "Active Aero System",
+                "Biometric Entry"
+            ],
+            colors: [
+                { name: "Obsidian Black", hex: "#0b0b0b", price: 0 },
+                { name: "Eclipse Silver", hex: "#b0c4de", price: 4000 },
+                { name: "Crimson Red", hex: "#dc143c", price: 3500 }
+            ],
+            interiors: [
+                { name: "Alcantara Black", price: 0 },
+                { name: "Vegan Leather", price: 2000 }
+            ],
+            description: "The Onyx Eclipse pushes the boundaries of what an electric hypercar can be. Its next-generation solid-state battery and graphene-infused body make it lighter, faster, and more efficient.",
+            category: "hypercar",
+            year: 2026,
+            stock: 1,
+            featured: true
+        },
+        {
+            id: 8,
+            name: "Crimson Viper",
+            fuel: "gas",
+            price: 215000,
+            img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800",
+            gallery: [
+                "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800",
+                "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800",
+                "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800"
+            ],
+            specs: {
+                "0-60": "3.5s",
+                topSpeed: "195 mph",
+                range: "280 miles",
+                horsepower: "650 HP",
+                torque: "600 lb-ft",
+                weight: "3,400 lbs",
+                length: "185 inches",
+                width: "75 inches"
+            },
+            features: [
+                "Naturally Aspirated V8",
+                "Manual Transmission Option",
+                "Rear-Wheel Drive",
+                "Sport Exhaust",
+                "Carbon Ceramic Brakes",
+                "Track Telemetry"
+            ],
+            colors: [
+                { name: "Viper Red", hex: "#ff0800", price: 0 },
+                { name: "Racing Yellow", hex: "#ffd700", price: 2000 },
+                { name: "Graphite", hex: "#2b2b2b", price: 1500 }
+            ],
+            interiors: [
+                { name: "Black Leather", price: 0 },
+                { name: "Red Stitching", price: 1000 }
+            ],
+            description: "The Crimson Viper is a purist's dream. A naturally aspirated V8 paired with a beautifully balanced rear-wheel-drive chassis delivers an unfiltered, engaging driving experience.",
+            category: "sports",
+            year: 2026,
+            stock: 7,
             featured: false
         }
     ],
